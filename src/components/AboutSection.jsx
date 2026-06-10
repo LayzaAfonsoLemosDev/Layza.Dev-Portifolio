@@ -4,24 +4,24 @@ import { profile } from '../data/profile';
 
 const aboutText = {
   pt: {
-    reason: 'Por que funciona',
-    title: 'Pessoas se conectam com o que entendem rapido.',
+    reason: 'Minha Base',
+    title: 'Desenvolvimento com mentalidade de engenharia.',
     description:
-      'Um bom site prende atencao quando reduz confusao, guia o olhar e transmite seguranca. E nisso que eu penso quando desenvolvo.',
+      'Não construo apenas interfaces bonitas. Construo sistemas feitos para escalar, fáceis de manter e que resolvem problemas reais do seu negócio.',
     eyebrow: 'Sobre Mim',
-    sectionTitle: 'Desenvolvimento web com intencao, cuidado visual e base tecnica',
+    sectionTitle: 'Soluções web com intenção e base técnica sólida',
     sectionDescription:
-      'Nao penso em um site apenas como algo bonito. Penso em ritmo de leitura, percepcao de valor, confianca visual e experiencia fluida do primeiro ao ultimo scroll.',
+      'Meu objetivo é transformar regras de negócios complexas em experiências fluidas. Faço isso unindo desenvolvimento web moderno com as melhores práticas corporativas de análise e arquitetura.',
   },
   en: {
-    reason: 'Why it works',
-    title: 'People connect with what they understand quickly.',
+    reason: 'My Foundation',
+    title: 'Development with an engineering mindset.',
     description:
-      'A strong website holds attention when it reduces confusion, guides the eye, and communicates confidence. That is how I think when I build.',
+      'I do not just build pretty interfaces. I build systems designed to scale, easy to maintain, and that solve real problems for your business.',
     eyebrow: 'About Me',
-    sectionTitle: 'Web development with intention, visual care, and technical grounding',
+    sectionTitle: 'Web solutions with intention and solid technical grounding',
     sectionDescription:
-      'I do not see a website as something that only needs to look good. I think about reading rhythm, value perception, visual trust, and a fluid experience from the first to the last scroll.',
+      'My goal is to turn complex business rules into fluid experiences. I do this by combining modern web development with enterprise best practices for analysis and architecture.',
   },
 };
 
@@ -38,13 +38,13 @@ function AboutSection({ language }) {
           </h3>
           <p className="mt-4 text-sm leading-7 text-mist">{text.description}</p>
           <div className="mt-8 grid gap-4">
-            {profile.principles[language].map((principle) => (
+            {profile.experience[language].map((item) => (
               <div
-                key={principle.title}
+                key={item.title}
                 className="rounded-3xl border border-white/10 bg-abyss/70 p-4"
               >
-                <p className="text-xs uppercase tracking-[0.3em] text-neon">{principle.title}</p>
-                <p className="mt-2 text-sm leading-7 text-mist">{principle.description}</p>
+                <p className="text-xs uppercase tracking-[0.3em] text-neon">{item.title}</p>
+                <p className="mt-2 text-sm leading-7 text-mist">{item.description}</p>
               </div>
             ))}
           </div>
@@ -69,6 +69,20 @@ function AboutSection({ language }) {
                 {paragraph}
               </motion.p>
             ))}
+          </div>
+
+          <div className="mt-12">
+            <h4 className="font-display text-lg font-semibold text-white mb-4">Tech Stack</h4>
+            <div className="flex flex-wrap gap-2">
+              {profile.skills.map((skill) => (
+                <span
+                  key={skill}
+                  className="rounded-full border border-white/10 bg-panel/50 px-4 py-2 text-sm font-medium text-mist transition hover:bg-white/10 hover:text-white"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>

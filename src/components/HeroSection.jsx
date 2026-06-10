@@ -1,29 +1,29 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { ArrowRight, LayoutDashboard, Mail, Sparkles } from 'lucide-react';
+import { ArrowRight, LayoutDashboard, Mail, Sparkles, Download } from 'lucide-react';
 import { profile, rotatingTitles } from '../data/profile';
 
 const heroMockup = {
   pt: {
-    conceptLabel: 'Conceito visual',
-    firstImpression: 'Primeira impressao',
-    clearPresence: 'Presenca digital clara',
+    conceptLabel: 'Especialidades',
+    firstImpression: 'Soluções',
+    clearPresence: 'O que eu entrego',
     cards: [
-      { label: 'Impacto', value: 'Visual forte' },
-      { label: 'Fluxo', value: 'Leitura guiada' },
-      { label: 'Entrega', value: 'Mais confianca' },
+      { label: 'Sistemas', value: 'Sistemas Web' },
+      { label: 'Interfaces', value: 'Sites Profissionais' },
+      { label: 'Mobile', value: 'Aplicativos' },
     ],
     primaryCta: 'Ver projetos',
     secondaryCta: 'Entrar em contato',
   },
   en: {
-    conceptLabel: 'Website concept',
-    firstImpression: 'First impression',
-    clearPresence: 'Clear digital presence',
+    conceptLabel: 'Specialties',
+    firstImpression: 'Solutions',
+    clearPresence: 'What I deliver',
     cards: [
-      { label: 'Impact', value: 'Strong visuals' },
-      { label: 'Flow', value: 'Guided reading' },
-      { label: 'Result', value: 'More trust' },
+      { label: 'Systems', value: 'Web Systems' },
+      { label: 'Interfaces', value: 'Pro Websites' },
+      { label: 'Mobile', value: 'Applications' },
     ],
     primaryCta: 'View projects',
     secondaryCta: 'Get in touch',
@@ -97,14 +97,14 @@ function HeroSection({ language }) {
           </motion.p>
 
           <motion.div
-            className="mt-10 flex flex-col gap-4 sm:flex-row"
+            className="mt-10 flex flex-col gap-4 sm:flex-row flex-wrap"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
           >
             <a
               href="#projetos"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 font-semibold text-base transition hover:scale-[1.02]"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-base font-semibold text-abyss transition hover:scale-[1.02]"
             >
               {texts.primaryCta}
               <ArrowRight size={18} />
@@ -115,6 +115,15 @@ function HeroSection({ language }) {
             >
               {texts.secondaryCta}
               <Mail size={18} />
+            </a>
+            <a
+              href="/curriculo-layza-lemos.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-3 font-semibold text-white transition hover:border-cyan/40 hover:bg-cyan/10"
+            >
+              {language === 'pt' ? 'Baixar CV' : 'Resume'}
+              <Download size={18} />
             </a>
           </motion.div>
 
@@ -171,11 +180,6 @@ function HeroSection({ language }) {
                     </span>
                   </div>
 
-                  <div className="mt-4 space-y-3">
-                    <div className="h-3 w-28 rounded-full bg-cyan/80" />
-                    <div className="h-3 w-full rounded-full bg-white/10" />
-                    <div className="h-3 w-4/5 rounded-full bg-white/10" />
-                  </div>
 
                   <div className="mt-5 grid grid-cols-3 gap-3">
                     {texts.cards.map((card) => (

@@ -57,6 +57,14 @@ function Navbar({ language, onLanguageToggle }) {
               {item.label}
             </a>
           ))}
+          <a
+            href="/curriculo-layza-lemos.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition hover:border-cyan/40 hover:bg-cyan/10"
+          >
+            {language === 'pt' ? 'Baixar CV' : 'Resume'}
+          </a>
           <button
             type="button"
             onClick={onLanguageToggle}
@@ -94,6 +102,14 @@ function Navbar({ language, onLanguageToggle }) {
                 {item.label}
               </a>
             ))}
+            <a
+              href="/curriculo-layza-lemos.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 block w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-left text-sm font-semibold text-white transition hover:bg-cyan/10"
+            >
+              {language === 'pt' ? 'Baixar CV' : 'Download Resume'}
+            </a>
             <button
               type="button"
               onClick={() => {

@@ -28,7 +28,11 @@ function ProjectsSection({ language }) {
           title={text.title}
           description={text.description}
         />
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div
+          className={`grid gap-6 ${
+            projects.length === 1 ? 'mx-auto max-w-3xl' : 'lg:grid-cols-2'
+          }`}
+        >
           {projects.map((project, index) => (
             <ProjectCard key={project.name} project={project} index={index} language={language} />
           ))}
